@@ -102,7 +102,7 @@ export default function LoginPage() {
                     value={formData.emailOrUsername}
                     onChange={handleInputChange}
                     disabled={isLoading}
-                    className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20 disabled:bg-slate-100 disabled:opacity-70"
+                    className="bg-white/70 text-white border-emerald-200  placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20 disabled:bg-slate-100 disabled:opacity-70"
                     required
                   />
                 </div>
@@ -118,7 +118,7 @@ export default function LoginPage() {
                     value={formData.password}
                     onChange={handleInputChange}
                     disabled={isLoading}
-                    className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20 disabled:bg-slate-100 disabled:opacity-70"
+                    className="bg-white/70 border-emerald-200 text-white placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20 disabled:bg-slate-100 disabled:opacity-70"
                     required
                   />
                 </div>
@@ -135,7 +135,7 @@ export default function LoginPage() {
                       value={formData.twoFactorCode}
                       onChange={handleInputChange}
                       disabled={isLoading}
-                      className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20 disabled:bg-slate-100 disabled:opacity-70"
+                      className="bg-white/70 text-white border-emerald-200  placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20 disabled:bg-slate-100 disabled:opacity-70"
                     />
                   </div>
                 )}

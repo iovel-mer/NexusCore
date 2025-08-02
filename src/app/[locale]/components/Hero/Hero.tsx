@@ -80,7 +80,7 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-16 relative z-10">
+      <div className="container mx-auto px-6 py-4 relative z-10">
         <div className="grid lg:grid-cols-12 gap-12 items-center min-h-screen">
           {/* Hero Content */}
           <div className="lg:col-span-7 space-y-8">

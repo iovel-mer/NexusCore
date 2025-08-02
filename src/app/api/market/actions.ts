@@ -23,17 +23,6 @@ export type TradingPair = {
 const coinLogoMap: { [key: string]: string } = {
   BTC: "/assets/images/btc.png",
   ETH: "/assets/images/eth.png",
-  // BNB: "/assets/images/bnb.png",
-  // SOL: "/assets/images/sol.png",
-  // ADA: "/assets/images/ada.webp",
-  // AVAX: "/assets/images/avax.png",
-  // DOT: "/assets/images/dot.png",
-  // MATIC: "/assets/images/matic.png",
-  // USDT: "/assets/images/usdt.png",
-  // XRP: "/assets/images/xrp.png",
-  // DOGE: "/assets/images/doge.png",
-  // TRX: "/assets/images/trx.png",
-  // Add more as needed
 }
 
 // Helper function to get logo URL
