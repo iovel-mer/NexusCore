@@ -89,7 +89,7 @@ export const Market: React.FC = () => {
         style={{ 
           width: size, 
           height: size,
-          // clipPath: 'polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%)'
+         
         }}
       >
         <Image
@@ -97,7 +97,7 @@ export const Market: React.FC = () => {
           width={size}
           height={size}
           alt={`${coin.name || coin.symbol} logo`}
-          className="object-cover"
+          className="object-cover rounded-full"
           onError={() => handleImageError(coin.symbol)}
           unoptimized
         />

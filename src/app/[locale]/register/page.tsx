@@ -19,11 +19,12 @@ import { getCountries } from "@/app/api/countries/getCountries"
 import { getLanguages } from "@/app/api/languages/getLanguages"
 import type { Country } from "@/app/api/types/countries"
 import type { Language } from "@/app/api/types/languages"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 
 export default function RegisterPage() {
   const router = useRouter()
-   const t = useTranslations("Register")
+  const t = useTranslations('register');
+  const locale  = useLocale();
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -34,7 +35,7 @@ export default function RegisterPage() {
     telephone: "",
     country: "",
     language: "",
-    dateOfBirth: "",
+    dateOfBirth: "", // Stored as 'YYYY-MM-DD' string
     source: "",
   })
   const [isLoading, setIsLoading] = useState(false)
@@ -107,7 +108,7 @@ export default function RegisterPage() {
     setIsLoading(true)
     setError("")
     const response = await postRegistration(formData)
-    if (response.errors) {
+    if (response?.errors) {
       setError(response.message ?? "An unknown error occurred")
       setIsLoading(false)
       return
@@ -146,126 +147,126 @@ export default function RegisterPage() {
   const dateOfBirthDate = formData.dateOfBirth ? parseISO(formData.dateOfBirth) : undefined
 
   return (
-     <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-teal-50 to-cyan-50 flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-grid-white flex flex-col lg:flex-row">
       {/* Left-side Registration Form */}
       <div className="flex-1 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
-        <Card className="w-full max-w-md bg-white/80 backdrop-blur-sm border-emerald-200/50 text-slate-800 shadow-2xl shadow-emerald-500/10">
+        <Card className="w-full max-w-md bg-grid-white border-gray-800 text-gray-200 shadow-lg">
           <CardHeader className="pb-4">
-            <Link href="/" className="inline-flex items-center text-black  mb-4 transition-colors">
-              <ArrowLeft className="w-4 h-4 mr-2" /> {t("backToHome")}
+            <Link href={`/${locale}`} className="inline-flex items-center text-gray-400 hover:text-white mb-4">
+              <ArrowLeft className="w-4 h-4 mr-2" /> {t("back")}
             </Link>
-            <CardTitle className="text-3xl font-bold text-slate-800 text-center">{t("title")}</CardTitle>
-            <p className="text-slate-600 text-center">{t("subtitle")}</p>
+            <CardTitle className="text-3xl font-bold text-white text-center">  {t("createAccount")}</CardTitle>
+            <p className="text-gray-400 text-center">{t("subtitle")}</p>
           </CardHeader>
           <CardContent>
             {error && (
-              <div className="p-3 mb-4 bg-red-50 border border-red-200 rounded-lg">
-                <p className="text-red-600 text-sm">{error}</p>
+              <div className="p-3 mb-4 bg-red-900/50 border border-red-500/50 rounded-lg">
+                <p className="text-red-400 text-sm">{error}</p>
               </div>
             )}
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
-                  <Label htmlFor="firstName" className="text-slate-700">
-                    {t("firstName")}
+                  <Label htmlFor="firstName" className="text-gray-300">
+                     {t("firstName")}
                   </Label>
                   <Input
                     id="firstName"
                     name="firstName"
                     type="text"
-                    placeholder={t("firstNamePlaceholder")}
+                    placeholder={t("pfirstName")}
                     value={formData.firstName}
                     onChange={handleInputChange}
                     disabled={isLoading}
                     required
-                    className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                    className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-purple-500"
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="lastName" className="text-slate-700">
+                  <Label htmlFor="lastName" className="text-gray-300">
                     {t("lastName")}
                   </Label>
                   <Input
                     id="lastName"
                     name="lastName"
                     type="text"
-                    placeholder={t("lastNamePlaceholder")}
+                    placeholder={t("plastName")}
                     value={formData.lastName}
                     onChange={handleInputChange}
                     disabled={isLoading}
                     required
-                    className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                    className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-purple-500"
                   />
                 </div>
               </div>
               <div className="space-y-2">
-                <Label htmlFor="email" className="text-slate-700">
+                <Label htmlFor="email" className="text-gray-300">
                   {t("email")}
                 </Label>
                 <Input
                   id="email"
                   name="email"
                   type="email"
-                  placeholder={t("emailPlaceholder")}
+                  placeholder= {t("pemail")}
                   value={formData.email}
                   onChange={handleInputChange}
                   disabled={isLoading}
                   required
-                  className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                  className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-purple-500"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="username" className="text-slate-700">
+                <Label htmlFor="username" className="text-gray-300">
                   {t("username")}
                 </Label>
                 <Input
                   id="username"
                   name="username"
                   type="text"
-                  placeholder={t("usernamePlaceholder")}
+                  placeholder= {t("pusername")}
                   value={formData.username}
                   onChange={handleInputChange}
                   disabled={isLoading}
                   required
-                  className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                  className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-purple-500"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="password" className="text-slate-700">
-                  {t("password")}
+                <Label htmlFor="password" className="text-gray-300">
+                 {t("password")}
                 </Label>
                 <Input
                   id="password"
                   name="password"
                   type="password"
-                  placeholder={t("passwordPlaceholder")}
+                  placeholder={t("ppassword")}
                   value={formData.password}
                   onChange={handleInputChange}
                   disabled={isLoading}
                   required
-                  className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                  className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-purple-500"
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phoneNumber" className="text-slate-700">
-                  {t("phoneNumber")}
+                <Label htmlFor="phoneNumber" className="text-gray-300">
+                   {t("phoneNumber")}
                 </Label>
                 <Input
                   id="phoneNumber"
                   name="phoneNumber"
                   type="tel"
-                  placeholder={t("phoneNumberPlaceholder")}
+                  placeholder= {t("pphoneNumber")}
                   value={formData.phoneNumber}
                   onChange={handleInputChange}
                   disabled={isLoading}
                   required
-                  className="bg-white/70 border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:border-emerald-500 focus:ring-emerald-500/20"
+                  className="bg-gray-800 border-gray-700 text-white placeholder:text-gray-500 focus:border-purple-500"
                 />
               </div>
               {/* Country Selector */}
               <div className="space-y-2">
-                <Label htmlFor="country" className="text-slate-700">
-                  {t("country")}
+                <Label htmlFor="country" className="text-gray-300">
+                    {t("country")}
                 </Label>
                 <Popover open={showCountryDropdown} onOpenChange={setShowCountryDropdown}>
                   <PopoverTrigger asChild>
@@ -273,30 +274,30 @@ export default function RegisterPage() {
                       variant="outline"
                       role="combobox"
                       aria-expanded={showCountryDropdown}
-                      className="w-full justify-between bg-white/70 border-emerald-200 text-slate-800 hover:bg-emerald-50 hover:text-slate-800 focus:ring-emerald-500/20"
+                      className="w-full justify-between bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:text-white focus:ring-purple-500"
                       disabled={isLoading}
                     >
-                      {selectedCountry ? selectedCountry.name : t("selectCountry")}
+                      {selectedCountry ? selectedCountry.name : "Select your country"}
                       <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-[--radix-popover-trigger-width] p-0 bg-white border-emerald-200 text-slate-800">
-                    <Command className="bg-white text-slate-800">
+                  <PopoverContent className="w-[--radix-popover-trigger-width] p-0 bg-gray-800 border-gray-700 text-white">
+                    <Command className="bg-gray-700 text-white">
                       <CommandInput
                         placeholder={t("searchCountries")}
                         value={countrySearch}
                         onValueChange={setCountrySearch}
-                        className="bg-white border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:ring-emerald-500/20"
+                        className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-500 focus:ring-purple-500"
                       />
                       <CommandList className="max-h-60 overflow-y-auto">
-                        <CommandEmpty>{t("noCountryFound")}</CommandEmpty>
+                        <CommandEmpty>{t("selectCountry")}</CommandEmpty>
                         <CommandGroup>
                           {filteredCountries.map((country) => (
                             <CommandItem
                               key={country.code}
                               value={country.name}
                               onSelect={() => handleCountrySelect(country.code)}
-                              className="cursor-pointer hover:bg-emerald-50 bg-white text-slate-800 data-[selected=true]:bg-emerald-100 data-[selected=true]:text-emerald-800"
+                              className="cursor-pointer hover:bg-gray-700 bg-gray-700 text-white data-[selected=true]:bg-purple-600 data-[selected=true]:text-white"
                             >
                               <Check
                                 className={cn(
@@ -315,8 +316,8 @@ export default function RegisterPage() {
               </div>
               {/* Language Selector */}
               <div className="space-y-2">
-                <Label htmlFor="language" className="text-slate-700">
-                  {t("language")}
+                <Label htmlFor="language" className="text-gray-300">
+                 {t("language")}
                 </Label>
                 <Popover open={showLanguageDropdown} onOpenChange={setShowLanguageDropdown}>
                   <PopoverTrigger asChild>
@@ -324,25 +325,25 @@ export default function RegisterPage() {
                       variant="outline"
                       role="combobox"
                       aria-expanded={showLanguageDropdown}
-                      className="w-full justify-between bg-white/70 border-emerald-200 text-slate-800 hover:bg-emerald-50 hover:text-slate-800 focus:ring-emerald-500/20"
+                      className="w-full justify-between bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:text-white focus:ring-purple-500"
                       disabled={isLoading}
                     >
-                      <span className={selectedLanguage ? "text-slate-800" : "text-slate-400"}>
+                      <span className={selectedLanguage ? "text-white" : "text-gray-500"}>
                         {selectedLanguage ? selectedLanguage.name : t("selectLanguage")}
                       </span>
                       <ChevronDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-[--radix-popover-trigger-width] p-0 bg-white border-emerald-200 text-slate-800">
-                    <Command className="bg-white text-slate-800">
+                  <PopoverContent className="w-[--radix-popover-trigger-width] p-0 bg-gray-800 border-gray-700 text-white">
+                    <Command className="bg-gray-800 text-white">
                       <CommandInput
-                        placeholder={t("searchLanguages")}
+                        placeholder="Search languages..."
                         value={languageSearch}
                         onValueChange={setLanguageSearch}
-                        className="bg-white border-emerald-200 text-slate-800 placeholder:text-slate-400 focus:ring-emerald-500/20"
+                        className="bg-gray-700 border-gray-600 text-white placeholder:text-gray-500 focus:ring-purple-500"
                       />
                       <CommandList className="max-h-60 overflow-y-auto">
-                        <CommandEmpty>{t("noLanguageFound")}</CommandEmpty>
+                        <CommandEmpty>No language found.</CommandEmpty>
                         <CommandGroup>
                           {filteredLanguages
                             .sort((a, b) => {
@@ -362,7 +363,7 @@ export default function RegisterPage() {
                                 key={language.code}
                                 value={language.name}
                                 onSelect={() => handleLanguageSelect(language.code)}
-                                className="cursor-pointer text-slate-800 hover:bg-emerald-50 data-[selected=true]:bg-emerald-100 data-[selected=true]:text-emerald-800"
+                                className="cursor-pointer text-white hover:bg-gray-700 data-[selected=true]:bg-green-600 data-[selected=true]:text-white"
                               >
                                 <Check
                                   className={cn(
@@ -381,16 +382,16 @@ export default function RegisterPage() {
               </div>
               {/* Date of Birth */}
               <div className="space-y-2">
-                <Label htmlFor="dateOfBirth" className="text-slate-700">
-                  {t("dateOfBirth")}
+                <Label htmlFor="dateOfBirth" className="text-gray-300">
+                 {t("dateOfBirth")}
                 </Label>
                 <Popover open={showDatePicker} onOpenChange={setShowDatePicker}>
                   <PopoverTrigger asChild>
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-full justify-start text-left font-normal bg-white/70 border-emerald-200 text-slate-800 hover:bg-emerald-50 hover:text-slate-800 focus:ring-emerald-500/20",
-                        !formData.dateOfBirth && "text-slate-400",
+                        "w-full justify-start text-left font-normal bg-gray-800 border-gray-700 text-white hover:bg-gray-700 hover:text-white focus:ring-purple-500",
+                        !formData.dateOfBirth && "text-gray-500",
                       )}
                       disabled={isLoading}
                     >
@@ -398,7 +399,7 @@ export default function RegisterPage() {
                       {formData.dateOfBirth ? format(dateOfBirthDate!, "PPP") : <span>{t("pickDate")}</span>}
                     </Button>
                   </PopoverTrigger>
-                  <PopoverContent className="w-auto p-0 bg-white border-emerald-200 text-slate-800">
+                  <PopoverContent className="w-auto p-0 bg-gray-800 border-gray-700 text-white">
                     <Calendar
                       mode="single"
                       selected={dateOfBirthDate}
@@ -407,7 +408,7 @@ export default function RegisterPage() {
                       captionLayout="dropdown"
                       fromYear={1900}
                       toYear={new Date().getFullYear()}
-                      className="[&_td]:text-slate-700 [&_th]:text-slate-600 [&_button]:text-slate-700 [&_button]:hover:bg-emerald-50 [&_button]:focus:bg-emerald-50 [&_div.rdp-day_selected]:bg-emerald-500 [&_div.rdp-day_selected]:text-white [&_div.rdp-day_today]:text-emerald-600 [&_select]:bg-white [&_select]:text-slate-800 [&_select]:border-emerald-200 [&_select]:rounded-md [&_select]:focus:ring-emerald-500/20"
+                       className="[&_td]:text-gray-200 [&_th]:text-gray-400 [&_button]:text-gray-200 [&_button]:hover:bg-gray-700 [&_button]:focus:bg-gray-700 [&_div.rdp-day_selected]:bg-purple-600 [&_div.rdp-day_selected]:text-white [&_div.rdp-day_today]:text-purple-400 [&_select]:bg-gray-800 [&_select]:text-white [&_select]:border-gray-600 [&_select]:rounded-md [&_select]:focus:ring-purple-500"
                     />
                   </PopoverContent>
                 </Popover>
@@ -415,21 +416,21 @@ export default function RegisterPage() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-gradient-to-r from-emerald-500 to-teal-600 hover:from-emerald-600 hover:to-teal-700 disabled:from-slate-400 disabled:to-slate-500 text-white font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-xl"
+                className="w-full bg-green-500 cursor-pointer disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold py-3 rounded-lg transition-all duration-200"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center">
                     <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white mr-2"></div>
-                    {t("creatingAccount")}
+                    {t("loading")}
                   </div>
                 ) : (
-                  t("createAccount")
+                  t("submit")
                 )}
               </Button>
             </form>
-            <p className="text-center text-slate-600 mt-4">
+            <p className="text-center text-gray-400 mt-4">
               {t("alreadyHaveAccount")}{" "}
-              <Link href="/login" className="text-emerald-600 hover:text-emerald-700 font-medium">
+              <Link href="/login" className="text-green-400 hover:text-purple-300 font-medium">
                 {t("signIn")}
               </Link>
             </p>
@@ -437,36 +438,40 @@ export default function RegisterPage() {
         </Card>
       </div>
       {/* Right-side Benefits Panel */}
-      <div className="flex-1 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 p-8 flex items-center justify-center relative overflow-hidden">
+      <div className="flex-1 bg-grid-white p-8 flex items-center justify-center relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           {/* Subtle background pattern/texture */}
           <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-5"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent"></div>
         </div>
         <div className="max-w-lg space-y-8 z-10 text-center lg:text-left">
-          <h2 className="text-4xl font-extrabold text-white mb-8 leading-tight">{t("unlockTradingPotential")}</h2>
-          <div className="space-y-6">
-            {[t("benefit1"), t("benefit2"), t("benefit3"), t("benefit4")].map((benefit, idx) => (
-              <div key={idx} className="flex items-start space-x-3">
-                <div className="flex-shrink-0 w-6 h-6 bg-emerald-500 rounded-full flex items-center justify-center mt-0.5 shadow-md">
-                  <Check className="w-4 h-4 text-white" />
-                </div>
-                <p className="text-slate-300 leading-relaxed text-lg">{benefit}</p>
-              </div>
-            ))}
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-8 border-t border-slate-700 mt-8">
+          <h2 className="text-4xl font-extrabold text-white mb-8 leading-tight">{t("benefitsTitle")}</h2>
+          <div className="max-w-lg space-y-8 z-10 text-center lg:text-left">
+  <h2 className="text-4xl font-extrabold text-white mb-8 leading-tight">{t("benefitsTitle")}</h2>
+  <div className="space-y-6">
+    {t.raw("benefits").map((benefit: string, idx: number) => (
+      <div key={idx} className="flex items-start space-x-3">
+        <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mt-0.5 shadow-md">
+          <Check className="w-4 h-4 text-white" />
+        </div>
+        <p className="text-gray-300 leading-relaxed text-lg">{benefit}</p>
+      </div>
+    ))}
+  </div>
+</div>
+
+          <div className="grid grid-cols-1 items-center sm:grid-cols-3 gap-6 pt-8 border-t border-gray-700 mt-8">
             <div className="text-center">
-              <p className="text-slate-400 text-sm mb-1">{t("totalTradingVolume")}</p>
-              <p className="text-3xl font-bold text-emerald-400">$2.8B+</p>
+              <p className="text-gray-400 text-sm mb-1">{t("volume")}</p>
+              <p className="text-3xl font-bold text-green-400">$2.8B+</p>
             </div>
             <div className="text-center">
-              <p className="text-slate-400 text-sm mb-1">{t("activeTraders")}</p>
-              <p className="text-3xl font-bold text-emerald-400">500K+</p>
+              <p className="text-gray-400 text-sm mb-1">{t("traders")}</p>
+              <p className="text-3xl font-bold text-green-400">500K+</p>
             </div>
             <div className="text-center">
-              <p className="text-slate-400 text-sm mb-1">{t("countries")}</p>
-              <p className="text-3xl font-bold text-emerald-400">180+</p>
+              <p className="text-gray-400 text-sm mb-1">{t("countries")}</p>
+              <p className="text-3xl font-bold text-green-400">180+</p>
             </div>
           </div>
         </div>

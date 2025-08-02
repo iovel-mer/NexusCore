@@ -55,7 +55,7 @@ export default function Footer() {
         <div className="absolute bottom-32 left-1/3 w-1.5 h-1.5 bg-purple-400 rounded-full animate-bounce opacity-60" style={{animationDelay: '1s'}}></div>
 
         <div className='container mx-auto relative z-10'>
-          <div className='grid md:grid-cols-2 lg:grid-cols-6 gap-10 mb-16'>
+          <div className='grid md:grid-cols-2 lg:grid-cols-6 gap-10 mb-8'>
             <div className='lg:col-span-2 md:col-span-2 px-8'>
               <div className='flex items-center space-x-3 mb-6'>
                <div className="relative group">
@@ -132,12 +132,7 @@ export default function Footer() {
             ))}
           </div>
           
-          {/* Separator with Neon Effect */}
-          <div className="relative mb-12">
-            <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
-            <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-4 h-4 bg-cyan-500 rounded-full animate-pulse shadow-[0_0_20px_rgba(0,255,255,0.5)]" 
-                 style={{clipPath: 'polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%)'}}></div>
-          </div>
+         
           
           {/* Legal Info Section */}
           <div className='relative bg-gradient-to-r from-gray-900/30 to-gray-800/30 backdrop-blur-xl border border-gray-700/50 p-8 mb-12 overflow-hidden'

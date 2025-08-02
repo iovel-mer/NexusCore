@@ -70,18 +70,18 @@ export default function LoginPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-emerald-50 via-green-50 to-teal-50 text-slate-800 flex items-center justify-center p-4 sm:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 flex items-center justify-center p-4 sm:p-8">
       <div className="flex flex-col lg:flex-row w-full max-w-7xl rounded-2xl overflow-hidden shadow-2xl bg-white/60 backdrop-blur-lg border border-emerald-200/50">
         {/* Left Side - Login Form */}
-        <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center">
-          <Link href={`/${locale}`} className="inline-flex items-center text-black hover:text-emerald-700 transition-colors mb-8">
+        <div className="flex-1 p-8 lg:p-12 flex flex-col justify-center bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
+          <Link href={`/${locale}`} className="inline-flex items-center text-white hover:text-emerald-700 transition-colors mb-8">
             <ArrowLeft className="w-4 h-4 mr-2" />
             {t("backToHome")}
           </Link>
-          <Card className="w-full bg-white/80 border-emerald-200/60 text-slate-800 shadow-xl backdrop-blur-sm">
+          <Card className="w-full bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 border-emerald-200/60 text-white shadow-xl backdrop-blur-sm">
             <CardHeader className="text-center">
-              <CardTitle className="text-3xl font-bold text-slate-900">{t("signIn")}</CardTitle>
-              <CardDescription className="text-slate-600">{t("welcomeBack")}</CardDescription>
+              <CardTitle className="text-3xl font-bold text-white">{t("signIn")}</CardTitle>
+              <CardDescription className="text-white">{t("welcomeBack")}</CardDescription>
             </CardHeader>
             <CardContent>
               {error && (
@@ -91,7 +91,7 @@ export default function LoginPage() {
               )}
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="space-y-2">
-                  <Label htmlFor="emailOrUsername" className="text-slate-700">
+                  <Label htmlFor="emailOrUsername" className="text-white">
                     {t("emailOrUsername")}
                   </Label>
                   <Input
@@ -107,7 +107,7 @@ export default function LoginPage() {
                   />
                 </div>
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="text-slate-700">
+                  <Label htmlFor="password" className="text-white">
                     {t("password")}
                   </Label>
                   <Input
@@ -157,7 +157,7 @@ export default function LoginPage() {
               </form>
             </CardContent>
             <CardFooter className="text-center flex flex-col">
-              <p className="text-slate-600">
+              <p className="text-white">
                 {t("dontHaveAccount")}{" "}
                 <Link href="/register" className="text-emerald-600 hover:text-emerald-700 font-medium">
                    {t("signUp")}

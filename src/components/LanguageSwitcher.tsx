@@ -40,7 +40,7 @@ export function LanguageSwitcher() {
         <Button
           variant="outline"
           size="sm"
-          className="gap-2 bg-black text-white flex items-center px-3"
+          className="gap-2 bg-black text-white flex items-center px-3 cursor-pointer"
         >
           <span className={`fi fi-${currentLanguage?.countryCode} w-5 h-4 rounded-sm`} />
           <span className="text-sm">{currentLanguage?.name}</span>

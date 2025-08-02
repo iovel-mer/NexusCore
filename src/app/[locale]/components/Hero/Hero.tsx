@@ -7,7 +7,7 @@ import { useLocale, useTranslations } from "next-intl"
 import { getHeroMarketData, type MarketData } from "@/app/api/market/actions"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardHeader, CardFooter } from "@/components/ui/card"
-import { Coins, BarChart3, Globe, Rocket, Play, ChevronRight, TrendingUp, Users, DollarSign, Crown, Star, Zap } from "lucide-react"
+import { Coins, BarChart3, Globe, Rocket, Play, ChevronRight, TrendingUp, Users, DollarSign, Crown, Star, Zap, UserPlus } from "lucide-react"
 
 export const Hero: React.FC = () => {
   const t = useTranslations("hero")
@@ -136,19 +136,27 @@ export const Hero: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href={`/${locale}/login`} passHref>
-              <Button className="!bg-black !text-white !hover:bg-black !hover:text-white !border-0 !shadow-2xl relative overflow-hidden px-8 py-6 font-bold text-lg rounded-2xl transition-all duration-500">
-  <div className="absolute inset-0 bg-transparent !opacity-0 pointer-events-none" />
-  <div className="relative z-10 flex items-center gap-3">
-    <Rocket size={22} className="transition-transform" />
-    <span>{t("startTrading")}</span>
-    <ChevronRight size={20} className="transition-transform" />
-  </div>
-</Button>
-
-
-
-              </Link>
+              <Link href={`/${locale}/login`}>
+          <Button className="group relative overflow-hidden flex items-center cursor-pointer gap-3 px-7 p-6 rounded-2xl text-sm font-semibold 
+            bg-transparent text-white border-2 border-transparent shadow-lg
+            hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-out
+            before:absolute before:inset-0 before:rounded-2xl before:p-[2px] 
+            before:bg-gradient-to-r before:from-slate-500 before:to-slate-300 
+            before:content-[''] before:-z-10
+            after:absolute after:inset-[2px] after:rounded-[14px] after:bg-slate-900 after:content-[''] after:-z-10">
+            
+            {/* Hover gradient background */}
+            <div className="absolute inset-[2px] rounded-[14px] bg-gradient-to-r from-slate-500/10 to-slate-300/10 
+              opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            
+            {/* Shimmer effect */}
+            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent 
+              -translate-x-full group-hover:translate-x-full transition-transform duration-700 ease-out" />
+            
+            <UserPlus size={18} className="relative z-10 group-hover:rotate-3 transition-transform duration-300" />
+            <span>{t("startTrading")}</span>
+          </Button>
+        </Link>
             
             </div>
 
@@ -258,11 +266,7 @@ export const Hero: React.FC = () => {
                                     />
                                     <Coins size={24} className="text-purple-400 hidden" />
                                   </div>
-                                  {index === 0 && (
-                                    <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center shadow-lg">
-                                      <Crown size={12} className="text-white" />
-                                    </div>
-                                  )}
+                                 
                                 </div>
                                 <div>
                                   <div className="text-white font-bold text-xl">{coin.symbol}</div>
