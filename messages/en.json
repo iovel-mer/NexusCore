@@ -447,106 +447,7 @@
     "backToHome": "Back to Home",
     "lastUpdated": "Last Updated: January 2024"
   },
-  "cookiePolicy": {
-    "title": "Cookie Policy",
-    "whatAreCookies": {
-      "title": "1. What Are Cookies",
-      "content": "Cookies are small text files stored on your device when you visit our website. They help us provide you with a better experience."
-    },
-    "typesOfCookies": {
-      "title": "2. Types of Cookies We Use",
-      "essential": "Essential Cookies: Required for the website to function properly, including authentication and security features.",
-      "analytics": "Analytics Cookies: Help us understand how visitors interact with our website by collecting anonymous information.",
-      "functional": "Functional Cookies: Enable enhanced functionality and personalization, such as remembering your preferences.",
-      "marketing": "Marketing Cookies: Used to track visitors across websites to display relevant advertisements."
-    },
-    "thirdPartyCookies": {
-      "title": "3. Third-Party Cookies",
-      "content": "We may use third-party services that set cookies on your device, including Google Analytics and advertising partners."
-    },
-    "managingCookies": {
-      "title": "4. Managing Cookies",
-      "content": "You can control cookies through your browser settings. However, disabling certain cookies may affect website functionality."
-    },
-    "cookieConsent": {
-      "title": "5. Cookie Consent",
-      "content": "By continuing to use our website, you consent to our use of cookies as described in this policy."
-    },
-    "updates": {
-      "title": "6. Updates to This Policy",
-      "content": "We may update this Cookie Policy from time to time. Changes will be posted on this page with an updated revision date."
-    }
-  },
-  "termsOfService": {
-    "title": "Terms of Service",
-    "acceptance": {
-      "title": "1. Acceptance of Terms",
-      "content": "By accessing and using SalesVault, you accept and agree to be bound by the terms and provisions of this agreement."
-    },
-    "tradingServices": {
-      "title": "2. Trading Services",
-      "content": "SalesVault provides cryptocurrency trading services. All trades are executed at your own risk."
-    },
-    "accountSecurity": {
-      "title": "3. Account Security",
-      "content": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account."
-    },
-    "riskDisclosure": {
-      "title": "4. Risk Disclosure",
-      "content": "Cryptocurrency trading involves substantial risk of loss and is not suitable for all investors. Past performance is not indicative of future results."
-    },
-    "feesAndCharges": {
-      "title": "5. Fees and Charges",
-      "content": "Trading fees apply to all transactions. Fee schedules are available on our website and may be updated from time to time."
-    },
-    "prohibitedActivities": {
-      "title": "6. Prohibited Activities",
-      "content": "Users may not engage in market manipulation, money laundering, or any other illegal activities on our platform."
-    },
-    "limitationOfLiability": {
-      "title": "7. Limitation of Liability",
-      "content": "SalesVault shall not be liable for any indirect, incidental, special, consequential, or punitive damages."
-    },
-    "termination": {
-      "title": "8. Termination",
-      "content": "We reserve the right to terminate or suspend your account at any time for violation of these terms."
-    }
-  },
-  "privacyPolicy": {
-    "title": "Privacy Policy",
-    "informationWeCollect": {
-      "title": "1. Information We Collect",
-      "content": "We collect information you provide directly to us, such as when you create an account, make trades, or communicate with us for support."
-    },
-    "howWeUseInfo": {
-      "title": "2. How We Use Your Information",
-      "content": "We use your information to provide, maintain, and improve our services, process transactions, and communicate with you."
-    },
-    "informationSharing": {
-      "title": "3. Information Sharing",
-      "content": "We do not sell, trade, or otherwise transfer your personal information to third parties without your consent, except as described in this policy."
-    },
-    "dataSecurity": {
-      "title": "4. Data Security",
-      "content": "We implement appropriate security measures to protect your personal information against unauthorized access, alteration, disclosure, or destruction."
-    },
-    "cookiesAndTracking": {
-      "title": "5. Cookies and Tracking",
-      "content": "We use cookies and similar technologies to enhance your experience, analyze usage patterns, and personalize content."
-    },
-    "dataRetention": {
-      "title": "6. Data Retention",
-      "content": "We retain your information for as long as necessary to provide services and comply with legal obligations."
-    },
-    "yourRights": {
-      "title": "7. Your Rights",
-      "content": "You have the right to access, update, or delete your personal information. Contact us to exercise these rights."
-    },
-    "internationalTransfers": {
-      "title": "8. International Transfers",
-      "content": "Your information may be transferred to and processed in countries other than your own, subject to appropriate safeguards."
-    }
-  },
+
   "support": {
     "contactUs": {
       "title": "Contact Us",
@@ -929,7 +830,7 @@
 },
 "blog": {
      "badge": "Documentation",
-      "title": "Developer Documentation",
+      "title": "Blog",
        
       "meta": {
     "readTime": "5 min read",
@@ -939,7 +840,7 @@
       "subtitle": "Comprehensive guide to get you started with our platform. Learn how to integrate, authenticate, and build amazing applications with our powerful APIs and tools.",
       "overview": {
         "title": "Overview",
-        "content": "Welcome to our developer documentation. This guide will walk you through everything you need to know to get started with our platform. From basic setup to advanced integrations, we've got you covered with detailed explanations and practical examples."
+        "content": "Welcome to our Blog. This guide will walk you through everything you need to know to get started with our platform. From basic setup to advanced integrations, we've got you covered with detailed explanations and practical examples."
       },
       "quickStart": {
         "title": "Quick Start Guide",
