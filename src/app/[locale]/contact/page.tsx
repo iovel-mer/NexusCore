@@ -22,17 +22,67 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Button } from "@/components/ui/button";
-import { Mail, Phone, Users, Clock, Home, ArrowRight } from "lucide-react";
+import { Mail, Phone, Users, Clock, Home, ArrowRight, AlertCircle } from "lucide-react";
 import { Header } from "../components/Header/Header";
 
 const ContactPage = () => {
   const t = useTranslations("contact");
   const [successMessage, setSuccessMessage] = useState<string | null>(null);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: ""
+  });
+  const [validationMessage, setValidationMessage] = useState<string | null>(null);
   const router = useRouter();
+
+  const validateForm = () => {
+    // Check if name is empty or too short
+    if (!formData.name.trim() || formData.name.trim().length < 2) {
+      return "Please enter a valid name (at least 2 characters)";
+    }
+
+    // Check email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!formData.email.trim() || !emailRegex.test(formData.email)) {
+      return "Please enter a valid email address";
+    }
+
+    // Check if subject is selected
+    if (!formData.subject) {
+      return "Please select a subject for your inquiry";
+    }
+
+    // Check message length
+    if (!formData.message.trim() || formData.message.trim().length < 10) {
+      return "Please provide a detailed message (at least 10 characters)";
+    }
+
+    return null;
+  };
+
+  const handleInputChange = (field: string, value: string) => {
+    setFormData(prev => ({ ...prev, [field]: value }));
+    // Clear validation message when user starts typing
+    if (validationMessage) {
+      setValidationMessage(null);
+    }
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSuccessMessage("✨ Your message has been sent successfully!");
+    
+    const validationError = validateForm();
+    if (validationError) {
+      setValidationMessage(validationError);
+      return;
+    }
+
+    // If validation passes, proceed with submission
+    setValidationMessage(null);
+    setSuccessMessage("Message sent successfully! Redirecting...");
+    
     setTimeout(() => {
       router.push("/");
     }, 2000);
@@ -68,7 +118,7 @@ const ContactPage = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen py-16 px-4 sm:px-6 lg:px-8  bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden">
+      <div className="container mx-auto min-h-screen py-16 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden">
         {/* Enhanced Background Effects */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,rgba(236,72,153,0.15),transparent_50%)]"></div>
@@ -82,22 +132,22 @@ const ContactPage = () => {
         <div className="absolute bottom-20 left-20 w-64 h-64 bg-gradient-to-br from-blue-500/25 to-cyan-500/25 rounded-full blur-3xl animate-bounce" style={{animationDuration: '4s'}}></div>
         <div className="absolute top-1/2 right-1/4 w-32 h-32 bg-gradient-to-br from-orange-500/35 to-red-500/35 rounded-full blur-2xl animate-ping" style={{animationDuration: '3s'}}></div>
 
-        <div className="max-w-5xl mx-auto relative z-10">
+        <div className="relative z-10">
           {/* Back to Home Link */}
-          <div className='flex justify-start mb-12'>
-            <Link 
-              href="/" 
-              className='inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-800/90 to-slate-800/90 backdrop-blur-xl rounded-2xl border border-gray-600/40 hover:from-gray-700/90 hover:to-slate-700/90 hover:border-pink-400/50 transition-all duration-300 group text-base font-bold text-white shadow-xl hover:shadow-pink-500/20 hover:scale-105'
+          <div className='p-20'>
+            <Link
+              href="/"
+              className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider backdrop-blur-md"
             >
-              <Home className='h-6 w-6 mr-3 group-hover:-translate-x-1 transition-transform duration-300 text-white' />
-              {t('backToHome')}
-              <ArrowRight className='h-5 w-5 ml-3 rotate-180 group-hover:-translate-x-1 transition-transform duration-300 text-white' />
+              <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
+              {t("backToHome")}
+              <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
             </Link>
           </div>
 
           {/* Hero Section */}
           <div className="text-center mb-20">
-            <h1 className="text-6xl sm:text-7xl font-black  mb-6 bg-gradient-to-r from-pink-300 via-purple-200 to-blue-300 bg-clip-text text-transparent leading-tight">
+            <h1 className="text-6xl sm:text-7xl font-black mb-6 bg-gradient-to-r from-pink-300 via-purple-200 to-blue-300 bg-clip-text text-transparent leading-tight">
               {t("title")}
             </h1>
             <p className="text-xl text-gray-300 font-light max-w-2xl mx-auto">{t("subtitle")}</p>
@@ -145,7 +195,7 @@ const ContactPage = () => {
               <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-500 to-blue-500 opacity-0 hover:opacity-20 transition-opacity duration-500 blur-2xl rounded-3xl"></div>
               
               <CardHeader className="relative z-10 pb-6">
-                <CardTitle className="text-3xl text-white font-black bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text ">
+                <CardTitle className="text-3xl text-white font-black bg-gradient-to-r from-pink-300 to-purple-300 bg-clip-text">
                   {t("form.title")}
                 </CardTitle>
                 <CardDescription className="text-gray-300 text-lg font-medium">
@@ -161,6 +211,8 @@ const ContactPage = () => {
                       id="name"
                       name="name"
                       placeholder="John Doe"
+                      value={formData.name}
+                      onChange={(e) => handleInputChange('name', e.target.value)}
                     />
                   </div>
                   <div className="grid gap-3">
@@ -171,11 +223,17 @@ const ContactPage = () => {
                       name="email"
                       type="email"
                       placeholder="you@example.com"
+                      value={formData.email}
+                      onChange={(e) => handleInputChange('email', e.target.value)}
                     />
                   </div>
                   <div className="grid gap-3">
                     <Label htmlFor="subject" className="text-white font-semibold text-base">{t("form.subject")}</Label>
-                    <Select name="subject">
+                    <Select 
+                      name="subject" 
+                      value={formData.subject}
+                      onValueChange={(value) => handleInputChange('subject', value)}
+                    >
                       <SelectTrigger className="text-white bg-gray-700/50 border-gray-600/50 focus:border-pink-400/50 rounded-xl h-12 text-base backdrop-blur-sm" id="subject">
                         <SelectValue placeholder={t("form.placeholder")} />
                       </SelectTrigger>
@@ -205,20 +263,33 @@ const ContactPage = () => {
                       name="message"
                       placeholder={t("form.placeholderMessage")}
                       className="min-h-[140px] text-white bg-gray-700/50 border-gray-600/50 focus:border-pink-400/50 rounded-xl text-base backdrop-blur-sm resize-none"
+                      value={formData.message}
+                      onChange={(e) => handleInputChange('message', e.target.value)}
                     />
                   </div>
+
+                  {/* Validation Message */}
+                  {validationMessage && (
+                    <div className="flex items-center gap-3 p-4 bg-orange-500/10 border border-orange-500/30 rounded-xl backdrop-blur-sm">
+                      <AlertCircle className="h-5 w-5 text-orange-400 flex-shrink-0" />
+                      <p className="text-orange-200 text-sm font-medium">{validationMessage}</p>
+                    </div>
+                  )}
+
+                  {/* Success Message */}
+                  {successMessage && (
+                    <div className="flex items-center gap-3 p-4 bg-green-500/10 border border-green-500/30 rounded-xl backdrop-blur-sm">
+                      <div className="h-5 w-5 bg-green-400 rounded-full flex-shrink-0"></div>
+                      <p className="text-green-200 text-sm font-medium">{successMessage}</p>
+                    </div>
+                  )}
+
                   <Button
                     type="submit"
                     className="w-full text-lg font-bold bg-black text-white hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-purple-500/30 hover:scale-105 rounded-xl h-14"
                   >
                     {t("form.button")}
                   </Button>
-
-                  {successMessage && (
-                    <div className="text-emerald-400 text-base text-center mt-6 p-4 bg-emerald-500/10 rounded-xl border border-emerald-500/20 backdrop-blur-sm">
-                      {successMessage}
-                    </div>
-                  )}
                 </form>
               </CardContent>
             </Card>

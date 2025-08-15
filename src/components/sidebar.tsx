@@ -88,12 +88,10 @@ export function Sidebar({ className }: SidebarProps) {
       <div className='flex items-center px-2 border-b mb-3'>
         <Link
           href='/dashboard'
-          className='flex h-[63px] items-center gap-2 font-semibold'
+          className='flex h-[63px] items-center gap-2 font-semibold pl-4'
         >
-          <div className='h-8 w-8 rounded-lg flex items-center justify-center'>
-           <Zap size={24} className="text-white" />
-          </div>
-          <span className='text-lg'>TechFlow</span>
+         
+          <span className='text-lg'>NexusCore</span>
         </Link>
       </div>
       <nav className='flex-1 space-y-1 px-2'>

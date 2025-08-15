@@ -36,7 +36,7 @@ export default function Footer() {
   return (
     <div className='relative'>
       {/* Footer */}
-      <footer className='py-24 px-6 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative text-white overflow-hidden'>
+      <footer className='container mx-auto py-24 px-6 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative text-white overflow-hidden'>
                     <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 
         {/* Cyberpunk Grid Background */}

@@ -287,7 +287,7 @@
     }
   },
   "terms": {
-    "goBackHome": "Volver al Inicio",
+    "backToHome": "Volver al Inicio",
     "title": "Términos y Condiciones",
     "lastUpdated": "Última actualización",
     "section1": {
@@ -819,7 +819,7 @@
     }
   },
   "Cookie": {
-    "backToHome": "← Regresar a la Página Principal",
+    "backToHome": "volver a casa",
     "title": "Aviso de Uso de Cookies",
     "description": "Aprende cómo usamos cookies para optimizar tu experiencia, personalizar contenido y analizar tráfico.",
     "section1": {

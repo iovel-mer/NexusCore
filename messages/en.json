@@ -259,7 +259,7 @@
     }
   },
   "terms": {
-    "goBackHome": "Go Back Home",
+    "backToHome": "Back to Home",
     "title": "Terms & Conditions",
     "lastUpdated": "Last updated",
     "section1": {
@@ -793,7 +793,7 @@
   }
 ,
 "Cookie": {
-  "backToHome": "← Return to Homepage",
+  "backToHome": "Back to Home",
   "title": "Cookie Usage Notice",
   "description": "Learn how we use cookies to optimize your experience, personalize content, and analyze traffic.",
   "section1": {

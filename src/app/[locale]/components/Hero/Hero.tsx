@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
   }
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative text-white  overflow-hidden">
+    <section className="min-h-screen container mx-auto bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative text-white  overflow-hidden">
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
       {/* Dynamic Background */}
       <div className="absolute inset-0">
@@ -80,8 +80,8 @@ export const Hero: React.FC = () => {
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px]"></div>
       </div>
 
-      <div className="container mx-auto px-6 py-4 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 items-center min-h-screen">
+      <div className=" px-6 py-4 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 items-center my-40">
           {/* Hero Content */}
           <div className="lg:col-span-7 space-y-8">
             {/* Floating Badge */}
@@ -136,7 +136,7 @@ export const Hero: React.FC = () => {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4 pt-4">
-              <Link href={`/${locale}/login`}>
+              <Link href={`/${locale}/register`}>
           <Button className="group relative overflow-hidden flex items-center cursor-pointer gap-3 px-7 p-6 rounded-2xl text-sm font-semibold 
             bg-transparent text-white border-2 border-transparent shadow-lg
             hover:shadow-xl hover:scale-[1.02] transition-all duration-300 ease-out

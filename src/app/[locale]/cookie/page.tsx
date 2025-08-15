@@ -13,32 +13,26 @@ export default function CookiePage() {
   return (
     <>
       <Header />
-      <main className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden">
+      <main className="min-h-screen pt-10 container mx-auto bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden">
         
         {/* Dynamic Background Elements */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(139,69,19,0.08)_2px,transparent_2px),linear-gradient(90deg,rgba(139,69,19,0.08)_2px,transparent_2px)] bg-[size:60px_60px]"></div>
-        
-       
-        {/* Large Background Orbs */}
         <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-gradient-conic from-purple-500/10 via-pink-500/10 to-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-gradient-conic from-indigo-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
 
-        <div className="relative z-10 px-6 py-12">
+        
+              <div className="p-20">
+                <Link
+                href="/"
+                className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider   backdrop-blur-md"
+                            >
+                <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
+                {t("backToHome")}
+                <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
+                            </Link>
+              </div>
           <div className="max-w-6xl mx-auto">
-            
-            {/* Header Section */}
             <div className="text-center mb-16">
-              <Link 
-                href="/" 
-                className='inline-flex items-center px-8 py-4  rounded-2xl border border-amber-400/30  text-sm font-bold text-white shadow-lg mb-12'
-              >
-                <Home className='h-5 w-5 mr-3 group-hover:scale-110 transition-transform duration-300 ' />
-                <span>{t('backToHome')}</span>
-                <ArrowRight className='h-5 w-5 ml-3 rotate-180 group-hover:scale-110 transition-transform duration-300 ' />
-              </Link>
-              
-             
-
               <h1 className="text-6xl md:text-7xl font-black mb-6 text-white  animate-pulse">
                 {t("title")}
               </h1>
@@ -111,7 +105,7 @@ export default function CookiePage() {
 
           
           </div>
-        </div>
+        
         
         {/* Bottom Gradient Line */}
         <div className="absolute bottom-0 left-0 right-0 h-2 bg-gradient-to-r from-amber-500 via-orange-500 to-amber-500 opacity-50"></div>

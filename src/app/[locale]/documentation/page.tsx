@@ -11,7 +11,7 @@ const page = () => {
   return (
     <>
       <Header />
-      <main className="min-h-screen relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white py-12 px-6 md:px-20 overflow-hidden">
+      <main className="container mx-auto min-h-screen relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white py-12 px-6 md:px-20 overflow-hidden">
         {/* Static Background Patterns */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,197,94,0.15),transparent_50%)]"></div>
@@ -20,15 +20,16 @@ const page = () => {
           <div className="absolute inset-0 bg-[linear-gradient(60deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(-60deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:35px_35px] pointer-events-none"></div>
         </div>
 
-        <div className="relative z-10">
-          <Link
-            href="/"
-            className="inline-flex items-center px-8 py-4 rounded-2xl border border-gray-600/40 text-base font-bold text-white shadow-xl mb-12"
-          >
-            <Home className="h-6 w-6 mr-3" />
-            {t("backToHome")}
-            <ArrowRight className="h-5 w-5 ml-3 rotate-180" />
-          </Link>
+       <div className='p-20'>
+               <Link
+                href="/"
+                className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider   backdrop-blur-md"
+                            >
+                <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
+                {t("backToHome")}
+                <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
+                            </Link>
+            </div>
 
           <div className="max-w-5xl mx-auto mt-8 space-y-12">
             <div className="text-center mb-16">
@@ -69,9 +70,9 @@ const page = () => {
                   <ol className="space-y-4 text-gray-300 text-lg font-medium">
                     {[1, 2].map((step) => (
                       <li key={step} className="flex items-start gap-4">
-                        <div className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                        {/* <div className="w-8 h-8 bg-cyan-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
                           {step}
-                        </div>
+                        </div> */}
                         <span>{t(`buy.step${step}`)}</span>
                       </li>
                     ))}
@@ -111,7 +112,7 @@ const page = () => {
               </section>
             ))}
           </div>
-        </div>
+        
       </main>
     </>
   );

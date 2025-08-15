@@ -11,22 +11,22 @@ const Page = () => {
   return (
     <>
       <Header />
-      <section className="min-h-screen relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-0 overflow-hidden">
-        {/* Animated texture background */}
-        <div className="absolute inset-0 z-0 bg-[url('/noise.svg')] opacity-5 mix-blend-soft-light pointer-events-none"></div>
-
-        {/* HERO SECTION */}
-        <section className="py-24 md:py-32 text-center px-6 md:px-12 max-w-5xl mx-auto relative z-10">
-          <div className="flex justify-start mb-10">
+      <section className="min-h-screen container mx-auto relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-0 overflow-hidden">
+          <div className="p-20">
             <Link
               href="/"
-              className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider uppercase  backdrop-blur-md"
+              className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider   backdrop-blur-md"
             >
               <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
               {t("backToHome")}
               <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
             </Link>
           </div>
+        {/* Animated texture background */}
+        <div className="absolute inset-0 z-0 bg-[url('/noise.svg')] opacity-5 mix-blend-soft-light pointer-events-none"></div>
+
+        {/* HERO SECTION */}
+        <section className="py-24 md:py-32 text-center px-6 md:px-12 max-w-5xl mx-auto relative z-10">
 
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight  bg-clip-text text-white mb-6 drop-shadow-lg uppercase">
             {t("title")}

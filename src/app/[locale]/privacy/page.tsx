@@ -12,7 +12,7 @@ const PrivacyPolicyPage = () => {
   return (
     <>
       <Header />
-      <div className="min-h-screen bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden">
+      <div className="min-h-screen container mx-auto bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative overflow-hidden">
         
         {/* Professional Grid Background */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none"></div>
@@ -21,19 +21,20 @@ const PrivacyPolicyPage = () => {
         <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 left-20 w-80 h-80 bg-gradient-to-br from-slate-600/10 to-blue-600/5 rounded-full blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         
+            <div className="p-20">
+              <Link
+              href="/"
+              className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider   backdrop-blur-md"
+            >
+              <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
+              {t("backToHome")}
+              <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
+            </Link>
+            </div>
         <div className="relative z-10 px-6 py-16">
           <div className="max-w-5xl mx-auto">
             
             {/* Header Section */}
-            <div className="mb-12">
-              <Link 
-                href="/" 
-                className='inline-flex items-center px-6 py-3 bg-white/10 backdrop-blur-lg rounded-2xl border border-white/20 hover:bg-white/15 hover:border-white/30 transition-all duration-300 group text-sm font-semibold text-white shadow-lg mb-8'
-              >
-                <Home className='h-5 w-5 mr-3 group-hover:scale-110 transition-transform duration-300 text-blue-300' />
-                <span>{t('backToHome')}</span>
-                <ArrowRight className='h-5 w-5 ml-3 rotate-180 group-hover:scale-110 transition-transform duration-300 text-blue-300' />
-              </Link>
               
               <div className="text-center mb-8">
                 <h1 className="text-5xl md:text-6xl font-black mb-4 bg-gradient-to-r from-white via-blue-200 to-white bg-clip-text text-transparent">
@@ -46,7 +47,7 @@ const PrivacyPolicyPage = () => {
                   {t("lastUpdated")}
                 </div>
               </div>
-            </div>
+            
 
             {/* Content Sections */}
             <div className="space-y-8">

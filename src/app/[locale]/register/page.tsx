@@ -147,10 +147,10 @@ export default function RegisterPage() {
   const dateOfBirthDate = formData.dateOfBirth ? parseISO(formData.dateOfBirth) : undefined
 
   return (
-    <div className="min-h-screen bg-grid-white flex flex-col lg:flex-row">
+    <div className="min-h-screen bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950 bg-grid-white flex flex-col lg:flex-row">
       {/* Left-side Registration Form */}
-      <div className="flex-1 flex items-center justify-center p-4 sm:p-8 overflow-y-auto">
-        <Card className="w-full max-w-md bg-grid-white border-gray-800 text-gray-200 shadow-lg">
+      <div className="flex-1 flex items-center justify-center p-4 sm:p-8 overflow-y-auto bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
+        <Card className="w-full max-w-md bg-grid-white border-gray-800 text-gray-200 shadow-lg bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
           <CardHeader className="pb-4">
             <Link href={`/${locale}`} className="inline-flex items-center text-gray-400 hover:text-white mb-4">
               <ArrowLeft className="w-4 h-4 mr-2" /> {t("back")}
@@ -164,7 +164,7 @@ export default function RegisterPage() {
                 <p className="text-red-400 text-sm">{error}</p>
               </div>
             )}
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4 bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="space-y-2">
                   <Label htmlFor="firstName" className="text-gray-300">
@@ -438,17 +438,13 @@ export default function RegisterPage() {
         </Card>
       </div>
       {/* Right-side Benefits Panel */}
-      <div className="flex-1 bg-grid-white p-8 flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          {/* Subtle background pattern/texture */}
-          <div className="absolute inset-0 bg-[url('/placeholder.svg?height=500&width=500')] bg-repeat opacity-5"></div>
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-900 to-transparent"></div>
-        </div>
-        <div className="max-w-lg space-y-8 z-10 text-center lg:text-left">
+      <div className="flex-1  p-8 flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
+      
+        <div className="max-w-lg space-y-8 z-10 text-center lg:text-left ">
           <h2 className="text-4xl font-extrabold text-white mb-8 leading-tight">{t("benefitsTitle")}</h2>
           <div className="max-w-lg space-y-8 z-10 text-center lg:text-left">
   <h2 className="text-4xl font-extrabold text-white mb-8 leading-tight">{t("benefitsTitle")}</h2>
-  <div className="space-y-6">
+  <div className="space-y-6 ">
     {t.raw("benefits").map((benefit: string, idx: number) => (
       <div key={idx} className="flex items-start space-x-3">
         <div className="flex-shrink-0 w-6 h-6 bg-green-500 rounded-full flex items-center justify-center mt-0.5 shadow-md">

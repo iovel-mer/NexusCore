@@ -77,7 +77,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <main className=" bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative px-4 py-16 sm:px-6 lg:px-8 mx-auto min-h-screen overflow-hidden text-white">
+      <main className="container mx-auto bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 relative px-4 py-16 sm:px-6 lg:px-8  min-h-screen overflow-hidden text-white">
         {/* Animated Mesh Background */}
         {/* <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(139,69,19,0.15),transparent_50%)]"></div>
@@ -87,26 +87,26 @@ const Page = () => {
         </div> */}
 
         {/* Dynamic Floating Orbs */}
-        {/* <div className="absolute top-20 right-16 w-64 h-64 bg-gradient-to-br from-violet-500/30 to-fuchsia-500/30 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-20 right-16 w-64 h-64 bg-gradient-to-br from-violet-500/30 to-fuchsia-500/30 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-32 left-20 w-80 h-80 bg-gradient-to-br from-teal-500/25 to-cyan-500/25 rounded-full blur-3xl animate-bounce" style={{animationDuration: '6s'}}></div>
         <div className="absolute top-1/3 left-1/2 transform -translate-x-1/2 w-48 h-48 bg-gradient-to-br from-amber-500/20 to-orange-500/20 rounded-full blur-2xl animate-ping" style={{animationDuration: '3s'}}></div>
-        <div className="absolute bottom-1/4 right-1/3 w-56 h-56 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-full blur-3xl animate-pulse" style={{animationDuration: '5s'}}></div> */}
+        <div className="absolute bottom-1/4 right-1/3 w-56 h-56 bg-gradient-to-br from-emerald-500/20 to-green-500/20 rounded-full blur-3xl animate-pulse" style={{animationDuration: '5s'}}></div>
 
-        {/* Page Content */}
-        <div className="relative z-10 max-w-7xl mx-auto">
-          {/* Hero Section */}
+      
+       
+            <div className='p-20'>
+               <Link
+                href="/"
+                className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider   backdrop-blur-md"
+                            >
+                <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
+                {t("backToHome")}
+                <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
+                            </Link>
+            </div>
+      
           <section className="text-center mb-24">
             {/* Back to Home Link */}
-            <div className='flex justify-start mb-12'>
-              <Link 
-                href="/" 
-                className='inline-flex items-center px-8 py-4 bg-gradient-to-r from-gray-800/80 to-slate-800/80 backdrop-blur-xl rounded-2xl border border-gray-600/40 hover:from-gray-700/80 hover:to-slate-700/80 hover:border-violet-400/50 transition-all duration-300 group text-base font-bold text-white shadow-xl hover:shadow-violet-500/20 hover:scale-105'
-              >
-                <Home className='h-6 w-6 mr-3 group-hover:-translate-x-1 transition-transform duration-300 text-white' />
-                {t('backToHome')}
-                <ArrowRight className='h-5 w-5 ml-3 rotate-180 group-hover:-translate-x-1 transition-transform duration-300 text-white' />
-              </Link>
-            </div>
 
             {/* Hero Badge */}
             <div className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 rounded-full border border-violet-400/30 mb-8 backdrop-blur-md">
@@ -199,8 +199,6 @@ const Page = () => {
             </div>
           </section>
 
-      
-        </div>
       </main>
     </>
   );
