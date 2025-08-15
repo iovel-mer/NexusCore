@@ -152,7 +152,7 @@ export default function RegisterPage() {
       <div className="flex-1 flex items-center justify-center p-4 sm:p-8 overflow-y-auto bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
         <Card className="w-full max-w-md bg-grid-white border-gray-800 text-gray-200 shadow-lg bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
           <CardHeader className="pb-4">
-            <Link href={`/${locale}`} className="inline-flex items-center text-gray-400 hover:text-white mb-4">
+            <Link href={`/${locale}`} className="inline-flex items-center text-gray-400 hover:text-green-500 mb-4">
               <ArrowLeft className="w-4 h-4 mr-2" /> {t("back")}
             </Link>
             <CardTitle className="text-3xl font-bold text-white text-center">  {t("createAccount")}</CardTitle>
@@ -416,7 +416,7 @@ export default function RegisterPage() {
               <Button
                 type="submit"
                 disabled={isLoading}
-                className="w-full bg-green-500 cursor-pointer disabled:from-gray-600 disabled:to-gray-700 text-white font-semibold py-3 rounded-lg transition-all duration-200"
+                className="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 disabled:from-slate-400 disabled:to-slate-500 text-white font-semibold py-3 rounded-lg transition-all duration-200 shadow-lg hover:shadow-emerald-500/25 disabled:cursor-not-allowed"
               >
                 {isLoading ? (
                   <div className="flex items-center justify-center">

@@ -37,14 +37,15 @@ const Page = () => {
         <div className='absolute inset-0 z-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none'></div>
         <main className=' px-4 py-8 md:py-12 lg:py-16'>
           <div className='p-20'>
-               <Link
-                href="/"
-                className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider   backdrop-blur-md"
-                            >
-                <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
-                {t("backToHome")}
-                <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
-                            </Link>
+                <Link
+    href="/"
+    className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider backdrop-blur-md group whitespace-nowrap"
+  >
+    <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
+    <span className="hidden sm:inline">{t("backToHome")}</span>
+    
+    <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
+  </Link>
             </div>
            
             <div className='text-center mb-12'>

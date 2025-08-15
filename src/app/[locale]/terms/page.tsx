@@ -17,14 +17,15 @@ export default function TermsOfService() {
 
         {/* Back button - top left */}
        <div className='p-20'>
-                <Link
-              href="/"
-              className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider   backdrop-blur-md"
-            >
-              <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1" />
-              {t("backToHome")}
-              <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1" />
-            </Link>
+                 <Link
+    href="/"
+    className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider backdrop-blur-md group whitespace-nowrap"
+  >
+    <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
+    <span className="hidden sm:inline">{t("backToHome")}</span>
+    
+    <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
+  </Link>
               </div>
 
         {/* Centered content wrapper */}

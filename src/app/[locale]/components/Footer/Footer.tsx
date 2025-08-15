@@ -66,7 +66,7 @@ export default function Footer() {
   <div className="absolute -inset-1 bg-gradient-to-r from-indigo-500 to-cyan-700 rounded-2xl blur opacity-30 transition duration-300" />
 </div>
 
-                <span className='text-3xl font-black uppercase tracking-wider bg-gradient-to-r text-white bg-clip-text '>
+                <span className='text-3xl font-black  tracking-wider bg-gradient-to-r text-white bg-clip-text '>
                   NexusCore
                 </span>
               </div>
