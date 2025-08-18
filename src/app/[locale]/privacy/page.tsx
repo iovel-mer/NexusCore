@@ -21,7 +21,7 @@ const PrivacyPolicyPage = () => {
         <div className="absolute top-10 sm:top-20 right-10 sm:right-20 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-gradient-to-br from-blue-500/10 to-cyan-500/5 rounded-full blur-2xl sm:blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 sm:bottom-20 left-10 sm:left-20 w-40 h-40 sm:w-60 sm:h-60 md:w-80 md:h-80 bg-gradient-to-br from-slate-600/10 to-blue-600/5 rounded-full blur-2xl sm:blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
         
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
+        <div className=" mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
           {/* Back to Home Button - Fixed Size */}
           <div className="mb-6 sm:mb-8">
             <Link

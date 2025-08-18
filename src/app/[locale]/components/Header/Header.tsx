@@ -15,11 +15,11 @@ export const Header: React.FC = () => {
   const t = useTranslations("Header")
 
   return (
-   <header className="bg-gradient-to-br sticky top-0 container mx-auto from-slate-900 via-gray-900 to-slate-950 z-50 border-b border-emerald-400/20">
+   <header className="bg-gradient-to-br sticky top-0  mx-auto from-slate-900 via-gray-900 to-slate-950 z-50 border-b border-emerald-400/20">
   <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_var(--tw-gradient-stops))] from-emerald-500/10 via-transparent to-transparent"></div>
   <div className="absolute inset-0 bg-[linear-gradient(60deg,rgba(16,185,129,0.05)_1px,transparent_1px),linear-gradient(-60deg,rgba(6,182,212,0.05)_1px,transparent_1px)] bg-[size:25px_25px] pointer-events-none"></div>
   
-  <div className="relative container mx-auto px-6 py-5">
+  <div className="relative  mx-auto px-6 py-5">
     <div className="flex items-center justify-between">
       {/* Logo and Brand */}
       <div className="flex items-center space-x-4">

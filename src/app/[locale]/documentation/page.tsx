@@ -11,7 +11,7 @@ const page = () => {
   return (
     <>
       <Header />
-      <main className="container mx-auto w-full relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white overflow-hidden">
+      <main className=" mx-auto w-full relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white overflow-hidden">
         {/* Static Background Patterns - Responsive */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,197,94,0.15),transparent_50%)]"></div>
@@ -20,7 +20,7 @@ const page = () => {
           <div className="absolute inset-0 bg-[linear-gradient(60deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(-60deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] sm:bg-[size:25px_25px] md:bg-[size:35px_35px] pointer-events-none"></div>
         </div>
 
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
+        <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
           {/* Back to Home Button - Fixed Size */}
           <div className="mb-6 sm:mb-8">
             <Link

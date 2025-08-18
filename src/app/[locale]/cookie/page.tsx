@@ -20,8 +20,8 @@ export default function CookiePage() {
         <div className="absolute top-1/4 right-4 sm:right-8 md:right-1/4 w-48 h-48 sm:w-64 sm:h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 bg-gradient-conic from-purple-500/10 via-pink-500/10 to-indigo-500/10 rounded-full blur-2xl sm:blur-3xl animate-pulse"></div>
         <div className="absolute bottom-1/4 left-4 sm:left-8 md:left-1/4 w-40 h-40 sm:w-56 sm:h-56 md:w-72 md:h-72 lg:w-80 lg:h-80 bg-gradient-conic from-indigo-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-2xl sm:blur-3xl animate-pulse" style={{animationDelay: '1s'}}></div>
 
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
-          {/* Back to Home Button - Fixed Size */}
+        <div className=" mx-auto px-3 sm:px-4 md:px-6 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
+         
           <div className="mb-6 sm:mb-8">
             <Link
               href="/"

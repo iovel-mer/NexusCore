@@ -33,8 +33,8 @@ const Page = () => {
   return (
     <>
       <Header />
-      <div className='container mx-auto min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative'>
-        <div className='absolute inset-0 z-0 bg-[linear-gradient(rgba(139,92,246,0.03)_1px,transparent_1px),linear-gradient(90deg,rgba(139,92,246,0.03)_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none'></div>
+        <div className='absolute inset-0 z-0 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pointer-events-none'></div>
+      <div className=' mx-auto min-h-screenfrom-slate-950 via-blue-950 to-slate-900  relative'>
         <main className=' px-4 py-8 md:py-12 lg:py-16'>
           <div className='p-20'>
                 <Link
@@ -71,7 +71,7 @@ const Page = () => {
 
             {/* Main Content */}
             <div className='lg:col-span-3'>
-              <article className='prose prose-lg prose-gray max-w-none'>
+              <article className='prose prose-lg prose-gray max-w-7xl mx-auto'>
                 {/* Overview */}
                 <section id='overview' className='mb-12'>
                   <Card className=' backdrop-blur-sm border-violet-200/50 shadow-xl hover:shadow-2xl transition-all duration-300 hover:shadow-violet-500/10'>

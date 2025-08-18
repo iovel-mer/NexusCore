@@ -29,7 +29,7 @@ export default function SecurityPage() {
   return (
     <>
       <Header />
-      <main className='min-h-screen container mx-auto bg-gradient-to-br pt-10 from-slate-950 via-blue-950 to-slate-900 text-white relative overflow-hidden'>
+      <main className='min-h-screen  mx-auto bg-gradient-to-br pt-10 from-slate-950 via-blue-950 to-slate-900 text-white relative overflow-hidden'>
 
         <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_30%_30%,rgba(255,255,255,0.03),transparent),radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.02),transparent)] bg-[size:100%_100%] pointer-events-none"></div>
        

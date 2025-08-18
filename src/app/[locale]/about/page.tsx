@@ -11,7 +11,7 @@ const Page = () => {
   return (
     <>
       <Header />
-      <section className="min-h-screen container mx-auto relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-0 overflow-hidden">
+      <section className="min-h-screen  mx-auto relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 pt-0 overflow-hidden">
           <div className="p-4 sm:p-6 md:p-8">
   <Link
     href="/"

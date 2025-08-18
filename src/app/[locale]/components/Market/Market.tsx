@@ -105,7 +105,7 @@ export const Market: React.FC = () => {
   }
 
   return (
-    <section className="w-full container mx-auto py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 min-h-screen relative overflow-hidden">
+    <section className="w-full  mx-auto py-8 sm:py-12 md:py-16 lg:py-20 bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 min-h-screen relative overflow-hidden">
       {/* Grid Background */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:40px_40px] pointer-events-none" />
 

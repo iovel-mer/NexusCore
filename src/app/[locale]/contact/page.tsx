@@ -132,7 +132,7 @@ const ContactPage = () => {
         <div className="absolute bottom-10 sm:bottom-20 left-10 sm:left-20 w-32 h-32 sm:w-48 sm:h-48 md:w-64 md:h-64 bg-gradient-to-br from-blue-500/25 to-cyan-500/25 rounded-full blur-2xl sm:blur-3xl animate-bounce" style={{animationDuration: '4s'}}></div>
         <div className="absolute top-1/2 right-1/4 w-16 h-16 sm:w-24 sm:h-24 md:w-32 md:h-32 bg-gradient-to-br from-orange-500/35 to-red-500/35 rounded-full blur-xl sm:blur-2xl animate-ping" style={{animationDuration: '3s'}}></div>
 
-        <div className="container mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 relative z-10">
+        <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 relative z-10">
           {/* Back to Home Link - Fixed Size */}
           <div className="mb-6 sm:mb-8">
             <Link
