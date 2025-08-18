@@ -29,7 +29,7 @@ export default function CookiePage() {
             >
               <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
               <span className="hidden sm:inline">{t("backToHome")}</span>
-              <span className="sm:hidden">Home</span>
+             
               <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
             </Link>
           </div>

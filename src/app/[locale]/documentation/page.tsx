@@ -11,7 +11,7 @@ const page = () => {
   return (
     <>
       <Header />
-      <main className="w-full relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white overflow-hidden">
+      <main className="container mx-auto w-full relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white overflow-hidden">
         {/* Static Background Patterns - Responsive */}
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,197,94,0.15),transparent_50%)]"></div>
@@ -29,7 +29,7 @@ const page = () => {
             >
               <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
               <span className="hidden sm:inline">{t("backToHome")}</span>
-              <span className="sm:hidden">Home</span>
+            
               <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
             </Link>
           </div>

@@ -141,7 +141,7 @@ const ContactPage = () => {
             >
               <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
               <span className="hidden sm:inline">{t("backToHome")}</span>
-              <span className="sm:hidden">Home</span>
+             
               <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
             </Link>
           </div>
@@ -276,14 +276,7 @@ const ContactPage = () => {
                       </div>
                     )}
 
-                    {/* Success Message */}
-                    {successMessage && (
-                      <div className="flex items-center gap-2 sm:gap-3 p-3 sm:p-4 bg-green-500/10 border border-green-500/30 rounded-lg sm:rounded-xl backdrop-blur-sm">
-                        <div className="h-4 w-4 sm:h-5 sm:w-5 bg-green-400 rounded-full flex-shrink-0"></div>
-                        <p className="text-green-200 text-xs sm:text-sm font-medium">{successMessage}</p>
-                      </div>
-                    )}
-
+                   
                     <Button
                       type="submit"
                       className="w-full text-base sm:text-lg font-bold bg-black text-white hover:from-pink-600 hover:via-purple-600 hover:to-blue-600 transition-all duration-300 shadow-xl hover:shadow-2xl hover:shadow-purple-500/30 hover:scale-105 rounded-lg sm:rounded-xl h-12 sm:h-14"

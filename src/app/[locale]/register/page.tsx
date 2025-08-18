@@ -107,6 +107,25 @@ export default function RegisterPage() {
     e.preventDefault()
     setIsLoading(true)
     setError("")
+    if (formData.dateOfBirth) {
+    const birthDate = parseISO(formData.dateOfBirth)
+    const today = new Date()
+    let age = today.getFullYear() - birthDate.getFullYear()
+    const m = today.getMonth() - birthDate.getMonth()
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+      age-- // not had birthday yet this year
+    }
+
+    if (age < 18) {
+      setError("You must be at least 18 years old to register.")
+      setIsLoading(false)
+      return
+    }
+  } else {
+    setError("Please select your date of birth.")
+    setIsLoading(false)
+    return
+  }
     const response = await postRegistration(formData)
     if (response?.errors) {
       setError(response.message ?? "An unknown error occurred")
@@ -152,7 +171,7 @@ export default function RegisterPage() {
       <div className="flex-1 flex items-center justify-center p-4 sm:p-8 overflow-y-auto bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
         <Card className="w-full max-w-md bg-grid-white border-gray-800 text-gray-200 shadow-lg bg-gradient-to-br from-slate-800 via-slate-900 to-slate-950">
           <CardHeader className="pb-4">
-            <Link href={`/${locale}`} className="inline-flex items-center text-gray-400 hover:text-green-500 mb-4">
+            <Link href={`/${locale}`} className="inline-flex items-center max-w-[130px] text-gray-400 hover:text-green-500 mb-4">
               <ArrowLeft className="w-4 h-4 mr-2" /> {t("back")}
             </Link>
             <CardTitle className="text-3xl font-bold text-white text-center">  {t("createAccount")}</CardTitle>
