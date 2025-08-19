@@ -9,117 +9,159 @@ const page = () => {
   const t = useTranslations("docs");
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900 relative overflow-hidden">
+      {/* Enhanced Background with Animated Elements */}
+      <div className="fixed inset-0 z-[-1]">
+        {/* Primary gradient background */}
+        <div className="absolute inset-0 bg-gradient-to-br from-slate-950 via-indigo-950 to-slate-900"></div>
+        
+        {/* Animated radial gradients */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(99,102,241,0.3),transparent_50%)] animate-pulse"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(139,92,246,0.25),transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(34,197,94,0.15),transparent_60%)]"></div>
+        
+        {/* Enhanced grid pattern with glow */}
+        <div className="absolute inset-0 bg-[linear-gradient(60deg,rgba(255,255,255,0.05)_1px,transparent_1px),linear-gradient(-60deg,rgba(255,255,255,0.05)_1px,transparent_1px)] bg-[size:40px_40px] opacity-30"></div>
+        
+        {/* Floating orbs for depth */}
+        <div className="absolute top-20 left-1/4 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-32 right-1/4 w-80 h-80 bg-purple-500/10 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-1/2 left-1/6 w-64 h-64 bg-cyan-500/10 rounded-full blur-3xl animate-pulse delay-2000"></div>
+      </div>
+      
       <Header />
-      <main className=" mx-auto w-full relative bg-gradient-to-br from-slate-950 via-blue-950 to-slate-900 text-white overflow-hidden">
-        {/* Static Background Patterns - Responsive */}
-        <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,197,94,0.15),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(59,130,246,0.15),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(168,85,247,0.1),transparent_60%)]"></div>
-          <div className="absolute inset-0 bg-[linear-gradient(60deg,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(-60deg,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:20px_20px] sm:bg-[size:25px_25px] md:bg-[size:35px_35px] pointer-events-none"></div>
-        </div>
-
-        <div className=" mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-8 sm:py-12 md:py-16 lg:py-20 relative z-10">
-          {/* Back to Home Button - Fixed Size */}
-          <div className="mb-6 sm:mb-8">
+      
+      <main className="text-white relative z-10">
+        <div className="mx-auto px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-12 md:py-16 lg:py-20">
+          {/* Enhanced Back to Home Button */}
+          <div className="mb-8 sm:mb-12">
             <Link
               href="/"
-              className="inline-flex items-center px-5 py-2.5 border text-white hover:text-white hover:border-white transition-all duration-300 rounded-full text-sm font-semibold tracking-wider backdrop-blur-md group whitespace-nowrap"
+              className="inline-flex items-center px-6 py-3 border border-indigo-500/30 bg-gradient-to-r from-indigo-600/20 to-purple-600/20 text-white hover:from-indigo-500/30 hover:to-purple-500/30 hover:border-indigo-400/50 transition-all duration-500 rounded-full text-sm font-bold tracking-wider backdrop-blur-xl group whitespace-nowrap shadow-lg hover:shadow-indigo-500/25 hover:shadow-xl transform hover:scale-105"
             >
-              <Home className="h-4 w-4 mr-2 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
-              <span className="hidden sm:inline">{t("backToHome")}</span>
-            
-              <ArrowRight className="h-4 w-4 ml-2 rotate-180 transition-transform group-hover:-translate-x-1 flex-shrink-0" />
+              <Home className="h-4 w-4 mr-3 transition-all duration-300 group-hover:-translate-x-1 group-hover:text-indigo-300 flex-shrink-0" />
+              <span className="hidden sm:inline bg-gradient-to-r from-white to-indigo-200 bg-clip-text text-transparent">{t("backToHome")}</span>
+              <ArrowRight className="h-4 w-4 ml-3 rotate-180 transition-all duration-300 group-hover:-translate-x-1 group-hover:text-indigo-300 flex-shrink-0" />
             </Link>
           </div>
 
-          <div className="max-w-5xl mx-auto space-y-8 sm:space-y-10 md:space-y-12">
-            <div className="text-center mb-8 sm:mb-12 md:mb-16">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black mb-4 sm:mb-6 text-white px-2">
-                {t("title")}
-              </h1>
+          <div className="max-w-6xl mx-auto space-y-10 sm:space-y-12 md:space-y-16">
+            {/* Enhanced Title Section */}
+            <div className="text-center mb-12 sm:mb-16 md:mb-20">
+              <div className="relative inline-block">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-black mb-6 sm:mb-8 bg-gradient-to-r from-white via-indigo-200 to-purple-300 bg-clip-text text-transparent px-2 leading-tight">
+                  {t("title")}
+                </h1>
+                {/* Glow effect behind title */}
+                <div className="absolute inset-0 bg-gradient-to-r from-indigo-500/20 via-purple-500/20 to-cyan-500/20 blur-3xl -z-10 scale-150"></div>
+              </div>
             </div>
 
-            {/* SECTION TEMPLATE */}
+            {/* Enhanced Sections */}
             {[
               {
-                icon: <Shield className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
+                icon: <Shield className="w-6 h-6 sm:w-7 sm:h-7 text-white drop-shadow-lg" />,
                 title: t("blockchain.title"),
                 text: t("blockchain.text"),
-                colors: "from-blue-500 to-purple-600",
+                colors: "from-blue-500 via-indigo-500 to-purple-600",
+                shadowColor: "shadow-blue-500/20",
+                hoverShadow: "hover:shadow-blue-500/40",
+                borderColor: "border-blue-500/20 hover:border-blue-400/40",
               },
               {
-                icon: <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
+                icon: <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 text-white drop-shadow-lg" />,
                 title: t("popular.title"),
-                colors: "from-orange-500 to-pink-600",
+                colors: "from-orange-500 via-pink-500 to-red-600",
+                shadowColor: "shadow-orange-500/20",
+                hoverShadow: "hover:shadow-orange-500/40",
+                borderColor: "border-orange-500/20 hover:border-orange-400/40",
                 content: (
-                  <ul className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base md:text-lg font-medium">
-                    <li className="flex items-start gap-2 sm:gap-3">
-                      <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-orange-400 rounded-full mt-2 sm:mt-3 flex-shrink-0"></div>
-                      <span><strong className="text-orange-300">Bitcoin (BTC):</strong> {t("popular.bitcoin")}</span>
+                  <ul className="space-y-4 sm:space-y-5 text-gray-200 text-sm sm:text-base md:text-lg font-medium">
+                    <li className="flex items-start gap-3 sm:gap-4 group">
+                      <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-r from-orange-400 to-pink-400 rounded-full mt-3 flex-shrink-0 shadow-lg shadow-orange-400/50 group-hover:shadow-orange-400/70 transition-all duration-300"></div>
+                      <span className="group-hover:text-white transition-colors duration-300">
+                        <strong className="text-transparent bg-gradient-to-r from-orange-300 to-pink-300 bg-clip-text">Bitcoin (BTC):</strong> {t("popular.bitcoin")}
+                      </span>
                     </li>
                   </ul>
                 ),
               },
               {
-                icon: <TrendingUp className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
+                icon: <TrendingUp className="w-6 h-6 sm:w-7 sm:h-7 text-white drop-shadow-lg" />,
                 title: t("buy.title"),
-                colors: "from-cyan-500 to-emerald-600",
+                colors: "from-cyan-500 via-teal-500 to-emerald-600",
+                shadowColor: "shadow-cyan-500/20",
+                hoverShadow: "hover:shadow-cyan-500/40",
+                borderColor: "border-cyan-500/20 hover:border-cyan-400/40",
                 content: (
-                  <ol className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base md:text-lg font-medium">
+                  <ol className="space-y-4 sm:space-y-5 text-gray-200 text-sm sm:text-base md:text-lg font-medium">
                     {[1, 2].map((step) => (
-                      <li key={step} className="flex items-start gap-2 sm:gap-3 md:gap-4">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full mt-2 sm:mt-3 flex-shrink-0"></div>
-                        <span>{t(`buy.step${step}`)}</span>
+                      <li key={step} className="flex items-start gap-3 sm:gap-4 group">
+                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-r from-cyan-400 to-emerald-400 rounded-full mt-3 flex-shrink-0 shadow-lg shadow-cyan-400/50 group-hover:shadow-cyan-400/70 transition-all duration-300"></div>
+                        <span className="group-hover:text-white transition-colors duration-300">{t(`buy.step${step}`)}</span>
                       </li>
                     ))}
                   </ol>
                 ),
               },
               {
-                icon: <Lightbulb className="w-5 h-5 sm:w-6 sm:h-6 text-white" />,
+                icon: <Lightbulb className="w-6 h-6 sm:w-7 sm:h-7 text-white drop-shadow-lg" />,
                 title: t("tips.title"),
-                colors: "from-violet-500 to-fuchsia-600",
+                colors: "from-violet-500 via-purple-500 to-fuchsia-600",
+                shadowColor: "shadow-violet-500/20",
+                hoverShadow: "hover:shadow-violet-500/40",
+                borderColor: "border-violet-500/20 hover:border-violet-400/40",
                 content: (
-                  <ul className="space-y-3 sm:space-y-4 text-gray-300 text-sm sm:text-base md:text-lg font-medium">
+                  <ul className="space-y-4 sm:space-y-5 text-gray-200 text-sm sm:text-base md:text-lg font-medium">
                     {[1, 2].map((tip) => (
-                      <li key={tip} className="flex items-start gap-2 sm:gap-3">
-                        <div className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-purple-400 rounded-full mt-2 sm:mt-3 flex-shrink-0"></div>
-                        <span>{t(`tips.tip${tip}`)}</span>
+                      <li key={tip} className="flex items-start gap-3 sm:gap-4 group">
+                        <div className="w-2 h-2 sm:w-2.5 sm:h-2.5 bg-gradient-to-r from-violet-400 to-fuchsia-400 rounded-full mt-3 flex-shrink-0 shadow-lg shadow-violet-400/50 group-hover:shadow-violet-400/70 transition-all duration-300"></div>
+                        <span className="group-hover:text-white transition-colors duration-300">{t(`tips.tip${tip}`)}</span>
                       </li>
                     ))}
                   </ul>
                 ),
               },
-            ].map(({ icon, title, text, content, colors }, i) => (
+            ].map(({ icon, title, text, content, colors, shadowColor, hoverShadow, borderColor }, i) => (
               <section
                 key={i}
-                className="relative bg-gradient-to-br from-gray-800/60 to-slate-900/70 backdrop-blur-xl border border-gray-600/40 rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 shadow-2xl overflow-hidden hover:border-gray-500/50 transition-all duration-300"
+                className={`relative bg-gradient-to-br from-slate-800/40 via-slate-800/60 to-slate-900/80 backdrop-blur-2xl border ${borderColor} rounded-3xl sm:rounded-[2rem] p-6 sm:p-8 md:p-10 shadow-2xl ${shadowColor} overflow-hidden transition-all duration-500 hover:scale-[1.02] ${hoverShadow} hover:shadow-2xl group`}
               >
+                {/* Animated background glow */}
+                <div className={`absolute inset-0 bg-gradient-to-br ${colors} opacity-5 group-hover:opacity-10 transition-all duration-500 rounded-3xl sm:rounded-[2rem]`}></div>
+                
                 <div className="relative z-10">
-                  <div className="flex items-center gap-3 sm:gap-4 mb-4 sm:mb-6">
-                    <div className={`w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br ${colors} rounded-lg sm:rounded-xl flex items-center justify-center shadow-lg`}>
+                  <div className="flex items-center gap-4 sm:gap-5 mb-6 sm:mb-8">
+                    <div className={`w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${colors} rounded-xl sm:rounded-2xl flex items-center justify-center shadow-xl transform group-hover:scale-110 transition-all duration-300`}>
                       {icon}
                     </div>
-                    <h2 className="text-xl sm:text-2xl md:text-3xl font-black mb-0 text-white">{title}</h2>
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-black text-transparent bg-gradient-to-r from-white to-gray-300 bg-clip-text">
+                      {title}
+                    </h2>
                   </div>
+                  
                   {text && (
-                    <p className="text-gray-300 text-sm sm:text-base md:text-lg leading-relaxed font-medium mb-4 sm:mb-6">
+                    <p className="text-gray-300 text-base sm:text-lg md:text-xl leading-relaxed font-medium mb-6 sm:mb-8 group-hover:text-gray-200 transition-colors duration-300">
                       {text}
                     </p>
                   )}
                   {content}
                 </div>
 
-                {/* Hover Effect */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 rounded-2xl sm:rounded-3xl pointer-events-none"></div>
+                {/* Enhanced hover effects */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/5 via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500 rounded-3xl sm:rounded-[2rem] pointer-events-none"></div>
+                
+                {/* Subtle border glow on hover */}
+                <div className={`absolute inset-0 rounded-3xl sm:rounded-[2rem] bg-gradient-to-br ${colors} opacity-0 group-hover:opacity-20 blur-sm transition-all duration-500 -z-10`}></div>
               </section>
             ))}
           </div>
         </div>
+
+        {/* Enhanced bottom spacing with gradient fade */}
+        <div className="h-40 bg-gradient-to-t from-transparent to-slate-950/20"></div>
       </main>
-    </>
+    </div>
   );
 };
 
