@@ -62,7 +62,7 @@ export default async function LocaleLayout({
             className={`${geistSans.variable} ${geistMono.variable} antialiased`}
           >
             {children}
-            <Toaster />
+           
           </div>
         </UserProvider>
       </ThemeProvider>
